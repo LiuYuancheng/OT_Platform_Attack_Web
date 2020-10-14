@@ -1,0 +1,62 @@
+{
+  "_from": "angular-material-data-table",
+  "_id": "angular-material-data-table@0.10.10",
+  "_inBundle": false,
+  "_integrity": "sha1-IptAJ0XsGhRvB9qNHlJr5lQISe4=",
+  "_location": "/angular-material-data-table",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular-material-data-table",
+    "name": "angular-material-data-table",
+    "escapedName": "angular-material-data-table",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-material-data-table/-/angular-material-data-table-0.10.10.tgz",
+  "_shasum": "229b402745ec1a146f07da8d1e526be6540849ee",
+  "_spec": "angular-material-data-table",
+  "_where": "/home/radiflow/AttackWeb/web",
+  "bugs": {
+    "url": "https://github.com/daniel-nagy/md-data-table/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Material Design data table.",
+  "devDependencies": {
+    "bower": "^1.3.9",
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^2.1.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-html2js": "^0.3.2",
+    "grunt-processhtml": "^0.3.7",
+    "jshint-stylish": "^1.0.0",
+    "load-grunt-tasks": "^0.6.0"
+  },
+  "homepage": "https://github.com/daniel-nagy/md-data-table#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "angular-material-data-table",
+  "peerDependencies": {
+    "angular": "^1.4.0",
+    "angular-material": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/daniel-nagy/md-data-table.git"
+  },
+  "version": "0.10.10"
+}
