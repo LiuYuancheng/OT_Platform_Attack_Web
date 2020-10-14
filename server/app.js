@@ -184,14 +184,6 @@ app.get('/actions/mitm/illuminateOff', function (req, res) {
     });
 });
 
-//
-
-
-
-
-
-
-
 // m221
 
 app.get('/actions/m221/startAttack', function (req, res) {
