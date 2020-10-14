@@ -1,0 +1,46 @@
+
+:root{
+    --toolbar-height: 64px;
+}
+
+/* overwirde */
+
+#page-content{
+    height: calc(100vh - var(--toolbar-height, 51px));
+    width: 100vw;
+}
+/*
+.navbar-default {
+    color: white; 
+    background-color: #333333 !important;
+
+}*/
+
+/*.dropdown a{
+    color: white;
+    height: var(--toolbar-height, 51px);
+}*/
+
+/*
+.sidebar{
+    margin-top:  var(--toolbar-height, 51px);
+}*/
+/*
+a:hover,
+a:focus {
+  background-color: rgba(1, 1, 1, 0.3) !important;
+  text-decoration: none;
+}*/
+
+/* end overwride */
+
+.main-navbar{
+    background-color:#333333 !important;  /*#333333 rgb(21, 153, 192) */  
+    border-color: #ffffff;
+}
+
+.logo-rf{
+    margin: 12px;
+    margin-left: 18px;
+    margin-right: 18px;
+}

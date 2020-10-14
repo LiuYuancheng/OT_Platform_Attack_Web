@@ -1,0 +1,24 @@
+
+
+[Unit]
+Description=server side for GUI
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+Alias=webservice.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+
+# Start main service
+ExecStart=/home/orchestrator/Attack/server/server/node /home/orchestrator/Attack/server/server/app.js
+
+# Give up if ping don't get an answer
+TimeoutSec=20
+
+Restart=always
+
+

@@ -1,0 +1,8 @@
+md-tab-item > span{
+    text-transform: capitalize;
+    font-size: medium;
+}
+
+.md-button{
+    text-transform: capitalize;
+}
