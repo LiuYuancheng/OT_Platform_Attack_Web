@@ -355,6 +355,57 @@
 				</td>
 			</tr>
 
+			<tr style="height: 60px;">
+				<td>
+					<i style="color: #0b79c8;" class="material-icons">domain</i>
+				</td>
+				<td>
+					<strong> Substation</strong>
+				</td>
+				<td>
+					Substation Attack
+				</td>
+				<td>
+
+					<span ng-hide="main.attackType">
+						<md-button ng-hide="main.state.blackOut == 'on'" ng-click="main.startBlackOutAttack()"
+							ng-disabled="['on','idle', 'none'].indexOf(main.state.blackOut) < 0"
+							class="md-raised md-primary">Start Attack
+						</md-button>
+						<md-button ng-show="main.state.blackOut == 'on'" ng-click="main.stopBlackOutAttack()"
+							ng-disabled="['on','idle', 'none'].indexOf(main.state.blackOut) < 0"
+							class="md-raised md-primary md-warn">Stop Attack
+							
+						</md-button>
+					</span>
+				</td>
+				<td style="text-align: center;padding:  20px;">
+
+					<div ng-if="main.state.blackOut == 'none'" 
+						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
+						Idle
+					</div>
+
+
+					<div ng-if="main.state.blackOut == 'on'"
+						style="border-radius: 20px; background-color: #82cc54; color: white;">
+						Attack in progress...
+					</div>
+
+					<div ng-if="main.state.blackOut == 'idle'" 
+						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
+						Idle
+					</div>
+
+					</div>
+				</td>
+				<td class="center">
+					<md-button title="Show logs">
+						<i class="material-icons">event_note</i>
+					</md-button>
+				</td>
+			</tr>
+
 		</table>
 	</div>
 
