@@ -1,6 +1,4 @@
 (function () {
-
-
     var app = angular.module("page", ['ngMaterial', 'md.data.table'])
         .config(function ($mdThemingProvider) {
             $mdThemingProvider.theme('default')
@@ -26,14 +24,16 @@
         main.downloadProgramActive = false;
         main.downloadProgramShowLogs = false;
         main.downloadProgramLogs = [];
-
+        
+        // define attack state
         main.state = {
             mitm: "none",
             m221: "none",
             download_program: "none",
             download_program2: "none",
-            falseInj: "none",
-            blackOut: "none",
+            falseInj: "none",       // false data injection attack tag.
+            blackOut: "none",       // black out attack tag.
+            subAttack: "none",      // substation attack tag.
         }
 
         main.illuminateState = {
@@ -319,6 +319,25 @@
                     console.log(data);
                 });
                 main.state.blackOut = 'idle';
+            }
+        };
+
+        // Substation attack:
+        main.startSubstationAttack = function () {
+            if (main.state.subAttack == 'none' || main.state.subAttack == 'idle') {
+                $http.get("/actions/sub_Attack/startAttack").success(function (data) {
+                    console.log(data);
+                });
+                main.state.subAttack = 'on';
+            }
+        };
+
+        main.stopSubstationAttack = function () {
+            if (main.state.subAttack == 'on') {
+                $http.get("/actions/sub_Attack/stopAttack").success(function (data) {
+                    console.log(data);
+                });
+                main.state.subAttack = 'idle';
             }
         };
 

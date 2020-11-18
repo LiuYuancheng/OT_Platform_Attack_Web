@@ -368,12 +368,12 @@
 				<td>
 
 					<span ng-hide="main.attackType">
-						<md-button ng-hide="main.state.blackOut == 'on'" ng-click="main.startBlackOutAttack()"
-							ng-disabled="['on','idle', 'none'].indexOf(main.state.blackOut) < 0"
+						<md-button ng-hide="main.state.subAttack == 'on'" ng-click="main.startSubstationAttack()"
+							ng-disabled="['on','idle', 'none'].indexOf(main.state.subAttack) < 0"
 							class="md-raised md-primary">Start Attack
 						</md-button>
-						<md-button ng-show="main.state.blackOut == 'on'" ng-click="main.stopBlackOutAttack()"
-							ng-disabled="['on','idle', 'none'].indexOf(main.state.blackOut) < 0"
+						<md-button ng-show="main.state.subAttack == 'on'" ng-click="main.stopSubstationAttack()"
+							ng-disabled="['on','idle', 'none'].indexOf(main.state.subAttack) < 0"
 							class="md-raised md-primary md-warn">Stop Attack
 							
 						</md-button>
@@ -381,18 +381,18 @@
 				</td>
 				<td style="text-align: center;padding:  20px;">
 
-					<div ng-if="main.state.blackOut == 'none'" 
+					<div ng-if="main.state.subAttack == 'none'" 
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
 					</div>
 
 
-					<div ng-if="main.state.blackOut == 'on'"
+					<div ng-if="main.state.subAttack == 'on'"
 						style="border-radius: 20px; background-color: #82cc54; color: white;">
 						Attack in progress...
 					</div>
 
-					<div ng-if="main.state.blackOut == 'idle'" 
+					<div ng-if="main.state.subAttack == 'idle'" 
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
 					</div>

@@ -16,6 +16,7 @@ const DOWNLOAD_PROGRAM_HOST = '192.168.10.251';
 const UDP_TECH_HOST = '192.168.10.251';
 //const UDP_RESP_HOST = '127.0.0.1';
 const UDP_RESP_HOST = '192.168.10.91';
+const UDP_GEN_HOST = '127.0.0.1';
 
 const udp_rsbp_port = 5005;
 const udp_tech_port = 5006;
@@ -358,7 +359,25 @@ app.get('/actions/blackOut_Attack/stopAttack', function (req, res) {
 });
 
 // Substation attack
+app.get('/actions/sub_Attack/startAttack', function (req, res) {
+    console.log('start substation attack');
+    var message = 'A;3';
+    udpClient.send(message, 0, message.length, udp_rsbp_port, UDP_GEN_HOST, function (err, bytes) {
+        if (err) throw err;
+        console.log('UDP client message sent to ' + UDP_GEN_HOST + ':' + udp_rsbp_port);
+    });
+    res.send(syslogs);
+});
 
+app.get('/actions/sub_Attack/stopAttack', function (req, res) {
+    console.log('stop substation attack');
+    var message = 'A;0';
+    udpClient.send(message, 0, message.length, udp_rsbp_port, UDP_GEN_HOST, function (err, bytes) {
+        if (err) throw err;
+        console.log('UDP client message sent to ' + UDP_GEN_HOST + ':' + udp_rsbp_port);
+    });
+    res.send(syslogs);
+});
 
 app.get('/playSound/:num', function (req, res) {
     var num = req.params.num;
