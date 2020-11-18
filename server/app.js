@@ -16,7 +16,8 @@ const DOWNLOAD_PROGRAM_HOST = '192.168.10.251';
 const UDP_TECH_HOST = '192.168.10.251';
 //const UDP_RESP_HOST = '127.0.0.1';
 const UDP_RESP_HOST = '192.168.10.91';
-const UDP_GEN_HOST = '127.0.0.1';
+//const UDP_GEN_HOST = '127.0.0.1';
+const UDP_GEN_HOST = '192.168.10.244';
 
 const udp_rsbp_port = 5005;
 const udp_tech_port = 5006;
