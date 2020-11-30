@@ -2,11 +2,19 @@
 
 ##### Introduction
 
-This project is used to create a web server running on the orchestrator  to provide a Website interface to control and feed back display for different cyber attack situation.
+This project is aim to create a web site server running on the orchestrator PC to provide a web interface to let the user control different cyber attack demos on OT railway module platform and show and show feed back display during the presentation. 
+
+###### Program Running Env
+
+![](doc/orchestratorPC.jpg)
 
 ###### Webpage View
 
 ![](doc/Web_view.png)
+
+###### Attack Work Flow
+
+![](doc/Attack_WorkFlow.png)
 
 
 
