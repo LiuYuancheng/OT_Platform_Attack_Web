@@ -61,6 +61,50 @@ Open a web browser and type in link: http://localhost:8080/
 
 
 
+Stealthy attack: 
+
+Sequence of attack: **Without detection algorithm**
+
+  1.1 Flickering of Airport runway light
+
+  1.2 Train stop/start moving
+
+  \2.  Effect lasted for 30 secs
+
+  \3.  Switch off Airport runway light
+
+  \4.  Wait for 10 secs
+
+  \5.  Switch off Train
+
+  \6.  Wait for 10 secs
+
+  \7.  City light change to red
+
+Sequence of attack: **With detection algorithm**
+
+  1.1 Flickering of Airport runway light
+
+  1.2 Train stop/start moving
+
+  2.1 Effect lasted for 30 secs
+
+  2.2 Attack detected - Sound Alarm and Pop up on HMI
+
+  \3.  Operator click on [Manual] button on HMI to switch the control to manual --- if not follow without detection scenario
+
+  3.1 Stop all the attack
+
+  \4.  Everything back to normal 
+
+
+
+
+
+
+
+
+
 ------
 
 > Last edit by LiuYuancheng([liu_yuan_cheng@hotmail.com](mailto:liu_yuan_cheng@hotmail.com)) at 14/10/2020
