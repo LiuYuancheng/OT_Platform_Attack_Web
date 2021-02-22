@@ -36,12 +36,42 @@ Download and Install NodeJs on Windows: https://www.guru99.com/download-install-
 
 | Program File       | Execution Env         | Description                                                  |
 | ------------------ | --------------------- | ------------------------------------------------------------ |
-| node_modules       | Node.js(JavaScript)   | All the additional module which need to import in the app.js |
+| node_modules       | Node.js(JavaScript)   | All the additional module which needed to import in the app.js |
 | public             | HTML, CSS, JavaScript | The main web page interface.                                 |
 | app.js             | Node.js(JavaScript)   | Main server program.                                         |
 | httpserver.service | sh                    | Auto run setup when running on Linux Platform.               |
 | playAlert.sh       | sh                    | Play the alert sound when the attack happens.                |
 | runServer.sh       | sh                    | Run the app.js and removed the duplicate running if found.   |
+
+First time setup on a computer: 
+
+1. Copy the server folder to the computer and setup the auto run service during the system boot up: 
+
+![Text Box: [Unit] Description=server side for GUI After=network.target [Install] WantedBy=multi-user.target Alias=webservice.service [Service] Type=simple User=root Group=root # Start main service ExecStart=/home/orchestrator/Attack/server/server/node /home/orchestrator/Attack/server/server/app.js # Give up if ping don't get an answer TimeoutSec=20 Restart=always ](file:///C:/Users/liu_y/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png)1.Create a new service unit file at /etc/systemd/system/httpserver.service with below content. The name of the service unit is user defined and can be any name of your choice.
+
+ 
+
+2. Reload the systemd process to consider newly created httpserver.service OR every time when httpserver.service gets modified: 
+
+**# systemctl daemon-reload**
+
+ 
+
+3. Enable this service to start after reboot automatically:
+
+\# **systemctl enable** **httpserver****.service**
+
+ 
+
+4. Start the service:
+
+\# **systemctl start sample.service**
+
+ 
+
+5. Reboot the host to verify whether the scripts are starting as expected during system boot.
+
+\# **systemctl reboot**
 
 
 
