@@ -8,7 +8,7 @@ This project is aim to create a web site server running on the orchestrator PC t
 
 ###### Program Running Env
 
-![](doc/orchestrator_PC.png)
+![](doc/Orchestrator_PC.png)
 
 ###### Webpage View
 
@@ -113,7 +113,47 @@ Node app.js
 
 Open a web browser and type in link: http://localhost:8080/
 
+------
 
+##### For Developer
+
+Todo:
+
+- [ ] Change to https to make the communicate secure.
+
+The communication detail: 
+
+```
+2.2 Attack Control Command All the action trigger commands are sent through UDP under format <ctrlTag>;<parameter> with UTF-8 byte encode. Attack control tag is “A” and the parameter [1, 2,3] specify starting different attack, 0 for stopping attack.
+2.2.1 False Data Injection Attack
+UDP Channel: Orchestrator PC (192.168.10.90) => Attack Raspberry PI (192.168.10.91) [Port 5005]
+UDP Sender program: Orchestrator PC [ /home/orchestrator/Attack/server/server/App.js]
+UDP Receiver program: Attack Raspberry PI [/Home/remoteAtk/attackServ.py] UDP message: Start Attack: 'A;2' Stop Attack: ‘A;0.’
+2.2.2 Black Out Attack [From App.js to actionServer.py, port:5006]:
+Step 1 Open the word doc:
+UDP Channel: Orchestrator PC (192.168.10.90) => Technical PC (192.168.10.251) [port 5006]
+UDP Sender program: Orchestrator PC [ /home/orchestrator/Attack/server/server/App.js]
+UDP Receiver program: Technical PC [ C:\Admin\Documents\remoteAtk\actionServer.py] UDP message: Start Attack: 'A;2' Stop Attack: ‘A;0’
+Step2 Start the attack:
+UDP Channel: Technical PC (192.168.10.251) => Attack Raspberry PI (192.168.10.91) [Port 5005]
+UDP Sender program: Orchestrator PC [C:\Admin\Documents\remoteAtk\attackHost.py]
+UDP Receiver program: Attack Raspberry PI [/Home/remoteAtk/attackServ.py] UDP message: Start Attack: 'A;2' Stop Attack: ‘A;0’
+2.2.3 Stealthy Substation Attack:
+UDP Channel: Orchestrator PC (192.168.10.90) => Generator control Raspberry PI (192.168.10.244) [port:5005]
+UDP Sender program: Orchestrator PC [ /home/orchestrator/Attack/server/server/App.js]
+UDP Receiver program: Attack Raspberry PI [/Home/GenMgr/src /attackServ.py] UDP message: Start Attack: 'A;3' Stop Attack: ‘A;0.’
+2.3 Webpage HTTP Command
+The attack control from webpage to web host program is using HTTP get request: WebPage’s JavaScript(server/public/js/index.js) => WebHost (server/App.js)
+2.3.1 False Data Injection Attack
+Attack start HTTP GET request: “/actions/falseInj_Attack/startAttack”.
+Attack stop HTTP GET request: “/actions/falseInj_Attack/stopAttack”.
+2.3.2 Black Out Attack
+Attack start HTTP GET request: “/actions/ blackOut_Attack/startAttack”.
+Attack stop HTTP GET request: “/actions/ blackOut_Attack/stopAttack”.
+2.3.3 Stealthy Substation Attack:
+Attack start HTTP GET request: “/actions/ sub_Attack/startAttack”.
+Attack stop HTTP GET request: “/actions/ sub_Attack/stopAttack”.
+```
 
 ------
 
