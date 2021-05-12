@@ -64,10 +64,7 @@
 		class="md-hue-2 main-navbar">
 		<!-- md-toolbar style="box-shadow: 0px -12px 21px 8px; background-color: #1f97f3 !important" class="md-hue-2 main-navbar" -->
 		<div class="layout-row" style="align-items: center;">
-
-			<a>
-				<img class="logo-rf" src="images/logo.png" alt="Radiflow">
-			</a>
+			<a><img class="logo-rf" src="images/logo.png" alt="Radiflow"></a>
 			<a class="navbar-brand" style="color:white; font-size:25px">Cyber Security Training</a>
 			<span flex></span>
 		</div>
@@ -134,9 +131,7 @@
 						<i class="material-icons">event_note</i>
 					</md-button>
 				</td>
-
 			</tr>
-
 
 			<tr style="height: 60px;">
 				<td>
@@ -146,7 +141,7 @@
 					<strong>Residential Area</strong>
 				</td>
 				<td>
-					Man in the Middle (MitM) from IoT Device.
+					Man In the Middle (MitM) from IOT Device.
 				</td>
 				<td>
 					<md-button ng-hide="main.state.m221 == 'on'" ng-click="main.startM221()"
@@ -189,7 +184,6 @@
 
 			</tr>
 
-
 			<tr style="height: 60px;">
 				<td>
 					<i style="color: #0b79c8;" class="material-icons">location_city</i>
@@ -198,10 +192,9 @@
 					<strong>City Area</strong>
 				</td>
 				<td>
-					Trojan in the technician PC
+					Trojan In the technician PC
 				</td>
 				<td>
-
 					<span ng-hide="main.attackType">
 						<md-button ng-hide="main.state.download_program == 'on'" ng-click="main.startDownloadProgram()"
 							ng-disabled="['on','idle'].indexOf(main.state.download_program) < 0"
@@ -265,7 +258,6 @@
 					False Data Injection Attack
 				</td>
 				<td>
-
 					<span ng-hide="main.attackType">
 						<md-button ng-hide="main.state.falseInj == 'on'" ng-click="main.startFalseInjAttack()"
 							ng-disabled="['on','idle', 'none'].indexOf(main.state.falseInj) < 0"
@@ -278,23 +270,17 @@
 					</span>
 				</td>
 				<td style="text-align: center;padding:  20px;">
-					
 					<div ng-if="main.state.falseInj == 'none'"
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
 					</div>
-
-
 					<div ng-if="main.state.falseInj == 'on'"
 						style="border-radius: 20px; background-color: #82cc54; color: white;">
 						Attack in progress...
 					</div>
-
 					<div ng-if="main.state.falseInj == 'idle'"
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
-					</div>
-
 					</div>
 				</td>
 				<td class="center">
@@ -309,13 +295,12 @@
 					<i style="color: #0b79c8;" class="material-icons">domain</i>
 				</td>
 				<td>
-					<strong> Generator Station</strong>
+					<strong> Power Generator</strong>
 				</td>
 				<td>
 					Black-Out Attack
 				</td>
 				<td>
-
 					<span ng-hide="main.attackType">
 						<md-button ng-hide="main.state.blackOut == 'on'" ng-click="main.startBlackOutAttack()"
 							ng-disabled="['on','idle', 'none'].indexOf(main.state.blackOut) < 0"
@@ -323,19 +308,15 @@
 						</md-button>
 						<md-button ng-show="main.state.blackOut == 'on'" ng-click="main.stopBlackOutAttack()"
 							ng-disabled="['on','idle', 'none'].indexOf(main.state.blackOut) < 0"
-							class="md-raised md-primary md-warn">Stop Attack
-							
+							class="md-raised md-primary md-warn">Stop Attack					
 						</md-button>
 					</span>
 				</td>
 				<td style="text-align: center;padding:  20px;">
-
 					<div ng-if="main.state.blackOut == 'none'" 
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
 					</div>
-
-
 					<div ng-if="main.state.blackOut == 'on'"
 						style="border-radius: 20px; background-color: #82cc54; color: white;">
 						Attack in progress...
@@ -345,8 +326,6 @@
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
 					</div>
-
-					</div>
 				</td>
 				<td class="center">
 					<md-button title="Show logs">
@@ -360,13 +339,12 @@
 					<i style="color: #0b79c8;" class="material-icons">domain</i>
 				</td>
 				<td>
-					<strong> Substation</strong>
+					<strong> Power Substation</strong>
 				</td>
 				<td>
-					Stealthy Substation Attack
+					Stealthy Command Injection Attack on Substation
 				</td>
 				<td>
-
 					<span ng-hide="main.attackType">
 						<md-button ng-hide="main.state.subAttack == 'on'" ng-click="main.startSubstationAttack()"
 							ng-disabled="['on','idle', 'none'].indexOf(main.state.subAttack) < 0"
@@ -380,23 +358,17 @@
 					</span>
 				</td>
 				<td style="text-align: center;padding:  20px;">
-
 					<div ng-if="main.state.subAttack == 'none'" 
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
 					</div>
-
-
 					<div ng-if="main.state.subAttack == 'on'"
 						style="border-radius: 20px; background-color: #82cc54; color: white;">
 						Attack in progress...
 					</div>
-
 					<div ng-if="main.state.subAttack == 'idle'" 
 						style="border-radius: 20px; background-color: #ffbd6a; color: white;">
 						Idle
-					</div>
-
 					</div>
 				</td>
 				<td class="center">
@@ -405,7 +377,6 @@
 					</md-button>
 				</td>
 			</tr>
-
 		</table>
 	</div>
 
@@ -452,7 +423,7 @@
 	</div>
 
 	<div id="mybutton">
-		<button class="versionBt">VERSION: CORPLAB-2019-T3.1-P1</button>
+		<button class="versionBt">VERSION: CORPLAB-2021-T5F-A1</button>
 	</div>
 
 	<script type="text/javascript" src="js/index.js"></script>
